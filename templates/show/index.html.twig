@@ -1,0 +1,16 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+<div class="container">
+    <div class="img-fluid">
+        <img src ="{{ article.image}}" alt="{{article.title}}">
+    </div>
+    <div>
+    <p class="date">Ecrit le {{article.createdAt | date("d/m/y")}} à {{article.createdAt | date("H:i") }}</p>
+    <p class="content">
+    {{article.content}}
+    </p>
+    </div>
+</div>
+
+{% endblock %}

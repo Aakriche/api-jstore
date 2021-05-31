@@ -1,8 +1,22 @@
-{%extends "base.html.twig" %}
-{% block title %}Accueil {% endblock %}
+{% extends "base.html.twig" %}
+{% block title %} Accueil {% endblock %}
 
 {% block body %}
 
 <h1>Bienvenue sur la page d'Accueil</h1>
+
+<div class='row'>
+            {% for article in articles %}
+        <div class="card col-md-4" style="width: 18rem;">
+        <p class="date">Ecrit le {{article.createdAt | date("d/m/y")}} à {{article.createdAt | date("H:i") }}</p>
+        <img class="card-img-top" src="{{article.image}}" alt="{{ article.title}}">
+        <div class="card-body">
+            <h5 class="card-title">{{ article.title }}</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">En savoir plus</a>
+        </div>
+        </div>
+            {% endfor %}
+</div>
 
 {% endblock %}
