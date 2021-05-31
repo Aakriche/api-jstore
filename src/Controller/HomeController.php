@@ -33,6 +33,10 @@ class HomeController extends AbstractController
 
         $article = $repo->find($id);
 
+        if(!$article){
+            return $this->redirectToRoute('home');
+        }
+
         return $this->render("show/index.html.twig", ['article' => $article,
         ]);
     }
