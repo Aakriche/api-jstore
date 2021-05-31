@@ -58,6 +58,7 @@ class User
     public function __construct()
     {
         $this->articles = new ArrayCollection();
+        $this->createdAt = new \DateTime();
     }
 
     public function getId(): ?int
@@ -68,6 +69,10 @@ class User
     public function getUsername(): ?string
     {
         return $this->username;
+    }
+
+    public function __toString(){
+        return $this->firstname.' '.$this->lastname;
     }
 
     public function setUsername(string $username): self
