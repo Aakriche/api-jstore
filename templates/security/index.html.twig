@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello SecurityController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>{{ controller_name }}! ✅</h1>
+     {{form_start(form)}}
+        {{form_row(form.username, {'label':"Nom d'utilisateur : ", 'attr' :{ 'placeholder': "Nom d'utilisateur"}})}}
+        {{form_row(form.firstname, {'label':"Prénom : ", 'attr' :{ 'placeholder': "Prénom"}})}}
+        {{form_row(form.lastname, {'label':"Nom : ", 'attr' :{ 'placeholder': "Nom "}})}}
+        {{form_row(form.email, {'label':"Email : ", 'attr' :{ 'placeholder': "email"}})}}
+        {{form_row(form.password, {'label':"Mot de passe : ", 'attr' :{ 'placeholder': "Mot de passe"}})}}
+        {{form_row(form.passwordConfirm, {'label':"Confirmer Mot de passe : ", 'attr' :{ 'placeholder': "Mot de passe"}})}}
+        <br>
+        <button class="btn btn-success">S'inscrire</button>
+     {{form_end(form)}}
+</div>
+{% endblock %}
